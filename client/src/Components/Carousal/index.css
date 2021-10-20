@@ -1,0 +1,33 @@
+div.scrollmenu {
+    background-color: #333;
+    width: 1910px;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  div.scrollmenu img {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+
+  .image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
