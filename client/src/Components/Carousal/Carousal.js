@@ -1,18 +1,17 @@
 import { Fragment, useRef, useEffect, useState } from "react";
+import { useSelector } from "react-redux"
 import "./index.css"
 import Modal from "../Modal/Modal"
-import axios from "axios"
+import store from "../../Redux/store"
+import {fetchLaptops} from "../../Redux/laptopAction"
 
 
 function Showcase() {
     const modalRef = useRef(null)
-    let [laptops, setLaptops] = useState([])
+    // let [laptops, setLaptops] = useState([])
+    let laptops = useSelector(state => state.laptopReducer.laptops)
     useEffect(async () => {
-        const getLaptops = async () => {
-            const { data } = await axios.get("http://localhost:3001/laptop-management/laptops")
-            setLaptops(data.result)
-        }
-        getLaptops()
+        store.dispatch(fetchLaptops)
     }, [])
 
     const openModal = () => {
